@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel Shop | ぴくせるしゃしんやさん</title>
+  <style>
+    :root { font-family: system-ui, sans-serif; }
+    header { padding: 1rem 0; text-align: center; }
+    nav button { margin: 0 .5rem; padding: .5rem 1rem; cursor: pointer; border: 1px solid #ccc; border-radius: 6px; }
+    .gallery { margin-top: 2rem; text-align: center; }
+    .gallery img { width: 280px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,.1); }
+    .buy { display: block; margin: .75rem auto; padding: .5rem 1.25rem; font-size: 1rem; border: none; border-radius: 6px; cursor: pointer; background: #4ade80; }
+    [lang="en"] { display: none; }
+    html.en [lang="en"] { display: inline; }
+    html.en [lang="ja"] { display: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><span lang="ja">ぴくせるしゃしんやさん</span><span lang="en">Pixel Shop</span></h1>
+    <p><span lang="ja">かわいい しゃしん を うってます</span><span lang="en">Cute pixel photos for sale</span></p>
+    <nav>
+      <button id="jpBtn">日本語</button>
+      <button id="enBtn">English</button>
+    </nav>
+  </header>
+
+  <section class="gallery">
+    <img src="https://placekitten.com/600/600" alt="Sample photo">
+    <button class="buy"><span lang="ja">このしゃしんを かう</span><span lang="en">Buy this photo</span></button>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Pixel Shop</p>
+  </footer>
+
+  <script>
+    document.getElementById('jpBtn').addEventListener('click', () => {
+      document.documentElement.classList.remove('en');
+    });
+    document.getElementById('enBtn').addEventListener('click', () => {
+      document.documentElement.classList.add('en');
+    });
+  </script>
+</body>
+</html>
